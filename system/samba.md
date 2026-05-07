@@ -53,15 +53,16 @@ Allow on firewall
 sudo ufw allow samba
 ```
 
-Create user account
+Create user account and password
 ```bash
 sudo smbpasswd -a <user>
 ```
+- replace ```<user>``` with your linux user
 
 On Windows device on the same network
 1. File Explorer > right click This PC > Map network drive...
 
-2. Select drive and folder
+2. Select drive and folder (\\\\server_ip\drive_name)
 
 3. Login using credentials
 
