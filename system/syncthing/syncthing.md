@@ -1,5 +1,5 @@
 # Syncthing
-Is a free, open-source program that synchronizes files between devices in real-time. It is a private, peer-to-peer alternative to services like Google Drive. 
+Syncthing is an open-source program that synchronizes files between devices in real-time. It is a private, peer-to-peer alternative to services like Google Drive. 
 
 I use it on my server to automatically back up data from my phone.
 
