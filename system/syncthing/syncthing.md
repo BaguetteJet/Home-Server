@@ -11,6 +11,7 @@ I use it on my server to automatically back up data from my phone.
 start http://localhost:9000/
 ssh -L 9000:localhost:8384 <user>@<server_ip>
 ```
+Download: https://syncthing.net/
 
 ## Setup
 *COMPLETED 24/01/2026*
