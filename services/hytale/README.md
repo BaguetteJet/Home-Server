@@ -6,9 +6,28 @@ Image source: https://github.com/Terkea/hytale-server
 
 Hytale Manual Server guide: https://support.hytale.com/hc/en-us/articles/45326769420827-Hytale-Server-Manual
 
+## Access
+
+On Hytale
+
+1. Click Add Server
+2. Enter the ```<server_address>:5520```
+3. Click Add Server
+
+Players on the same network as the server use local server address instead of ```server_address```
+
 ## Setup
 
 *COMPLETED 28/01/2026*
+
+Install Podman and Quadlet support.
+
+Allow port in firewalll
+```bash
+sudo ufw allow 5520/udp 
+```
+
+For players outside your local network, port forward 5520/udp 
 
 Create directory for navidrome
 ```bash
