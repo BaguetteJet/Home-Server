@@ -1,0 +1,18 @@
+[Unit]
+Description=Navidrome Music Server
+After=network-online.target
+
+[Container]
+ContainerName=navidrome
+Image=docker.io/deluan/navidrome:latest
+PublishPort=4533:4533
+# Path to MP3 folder (mount as read-only)
+Volume=/mnt/sata/Music:/music:ro
+# Path to where Navidrome stores its database and cache
+Volume=%h/navidrome:/data
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
