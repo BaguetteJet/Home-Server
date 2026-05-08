@@ -3,6 +3,8 @@ Syncthing is an open-source program that synchronizes files between devices in r
 
 I use it on my server to automatically back up data from my phone.
 
+Syncthing Website: https://syncthing.net/
+
 ## Access
 - Android: Syncthing app 
 - Windows: Terminal executable, which provides a local web interface.

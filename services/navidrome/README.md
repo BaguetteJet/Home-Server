@@ -3,6 +3,8 @@ Navidrome is an self-hosted music streaming server that lets you access your per
 
 I use it instead of Spotify because it gives me full control of my own music, with no ads or subscriptions. Compared to alternatives (like Jellyfin or Subsonic), it uses very low CPU/RAM and supports Subsonic API (so different mobile apps work with it).
 
+Navidrome Website: https://www.navidrome.org/
+
 ## Access
 - Android: [Substreamer](https://play.google.com/store/apps/details?id=com.ghenry22.substream2) app and browser access https://serverip:4533/
 - Windows: Browser access https://serverip:4533/

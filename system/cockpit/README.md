@@ -3,6 +3,8 @@ Cockpit is a web-based server management tool that lets you monitor and administ
 
 I use cockpit because it is lightweight and uses system-native tools. It allows me to visually monitor the system (including CPU, RAM, disk, network usange), manage services (systemd), view logs, manage containers (Podman) and more.
 
+Cockpit Website: https://cockpit-project.org/
+
 ## Access 
 Web console accessible though https://serverip:9090/ while connected to the same network.
 
