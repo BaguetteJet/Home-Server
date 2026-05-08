@@ -25,6 +25,8 @@ Download and setup [WakeMeOnLan](https://www.nirsoft.net/utils/wake_on_lan.html)
 
 ## Automatic Updates
 
+*COMPLETED 31/12/2025*  
+
 Following guide: [Ubuntu Server: Getting started with a Linux Server](https://youtu.be/2Btkx9toufg?si=NHzIZp1w5NViebnE) 13:40
 
 Install required packages
@@ -73,7 +75,9 @@ Check status
 sudo systemctl status unattended-upgrades
 ```
 
-## Mounting New Drive
+## Mount Drives
+
+## Manage Services
 
 ## Manage Alias
 Alias are shortcuts in the terminal. Access and modify them here:

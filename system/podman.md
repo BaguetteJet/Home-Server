@@ -101,7 +101,7 @@ podman system prune
 
 ## Examples
 Commented example of a minecraft server quadlet ```paper-mc-geyser.container```
-```bash
+```ini
 [Unit]
 # Description of service
 Description=Crossplay PaperMC 1.21.11 Server

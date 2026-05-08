@@ -28,7 +28,7 @@ sudo nano /etc/samba/smb.conf
 ```
 
 Add to drive details to the bottom
-```bash
+```ini
 # previous config above ...
 
 [name]                 # name drive, what is visible to other devices

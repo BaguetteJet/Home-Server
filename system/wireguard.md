@@ -96,7 +96,7 @@ sudo nano /etc/wireguard/wg0.conf
 ```
 
 Add peer to the bottom
-```bash
+```ini
 # previous config above ...
 
 [Peer]
@@ -114,7 +114,7 @@ AllowedIPs = 10.0.0.2/32
 Download: https://www.wireguard.com/install/
 
 Create new tunnel
-```bash
+```ini
 [Interface]
 PrivateKey = <Peer_Private_Key>
 Address = 10.0.0.2/24
