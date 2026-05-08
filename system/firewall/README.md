@@ -29,7 +29,9 @@ Check status
 sudo ufw status
 ```
 
-### Current Rules - UPDATED 07/05/2026
+## Current Rules
+*UPDATED 07/05/2026*
+
 ```sudo ufw status``` output commented
 ```
 To                         Action      From
