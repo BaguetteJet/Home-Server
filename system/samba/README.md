@@ -31,11 +31,13 @@ Add to drive details to the bottom
 ```ini
 # previous config above ...
 
-[name]                 # name drive, what is visible to other devices
-path = /home/to/share  # path to drive/folder to share (example /home/<user> or /mnt/drive)
+[<Drive>]               # name drive visible to other devices
+path = <Path>           # path to drive/folder
 read only = no
-browsable = yes        # to make drive discoverable on the network
+browsable = yes         # make drive discoverable on the network
 ```
+- Replace ```<Drive>``` with drive name (example: ```sharedrive```)
+- Replace ```<Path>``` with path to share (example: ```/home/<user>``` or ```/mnt/drive```)
 
 Start and enable at boot
 ```bash
@@ -62,7 +64,7 @@ sudo smbpasswd -a <user>
 On Windows device on the same network
 1. File Explorer > right click This PC > Map network drive...
 
-2. Select drive and folder (\\\\server_ip\drive_name)
+2. Select drive and folder (```\\<Server_IP>\<Drive>```) 
 
 3. Login using credentials
 

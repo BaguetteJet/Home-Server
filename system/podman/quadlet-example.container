@@ -1,0 +1,37 @@
+# Quadlet example for minecraft server
+[Unit]
+# Description of service
+Description=Crossplay PaperMC 1.21.11 Server
+# Start after connection established
+After=network-online.target
+
+[Container]
+# Container/serivce name
+ContainerName=paper-mc-geyser
+Image=docker.io/itzg/minecraft-server:java21
+# Allowed ports 
+PublishPort=25565:25565/tcp
+PublishPort=25565:25565/udp
+# Host user mapped directly into the container
+UserNS=keep-id
+
+# Environment variables
+Environment=EULA=TRUE
+Environment=TYPE=PAPER
+Environment=MEMORY=4G
+Environment=VERSION=1.21.11
+Environment=CREATE_CONSOLE_IN_PIPE=TRUE
+
+# Contianer volumne, where data will be store. %h is your user's home directory
+Volume=%h/minecraft-servers/paper-mc-geyser:/data:Z
+
+# Additional arguments
+PodmanArgs=--interactive --tty
+
+[Service]
+# Handle restart behaviour, remove to disable
+Restart=on-failure
+
+[Install]
+# Handle on boot behaviour, remove to disable
+WantedBy=default.target

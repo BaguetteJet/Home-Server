@@ -1,0 +1,8 @@
+[Unit]
+Description=Cloudflare DDNS Updater
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/cloudflare-ddns.sh

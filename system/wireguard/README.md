@@ -35,12 +35,11 @@ Create config file
 ```bash
 sudo nano /etc/wireguard/wg0.conf
 ```
-```
+```ini
 [Interface]
-Address = 10.0.0.1/24
-SaveConfig = true
-ListenPort = 51820
 PrivateKey = <Server_Private_Key>
+Address = 10.0.0.1/32
+ListenPort = 51820
 
 PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o <Interface> -j MASQUERADE
 PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o <Interface> -j MASQUERADE
@@ -81,13 +80,13 @@ sudo wg show
 ## Adding Peers (devices)
 Generate a new set of keys
 ```bash
-wg genkey | sudo tee /etc/wireguard/peer_private.key | wg pubkey | sudo tee /etc/wireguard/peer_public.key
+wg genkey | sudo tee /etc/wireguard/client_private.key | wg pubkey | sudo tee /etc/wireguard/client_public.key
 ```
 
 View newly generated keys
 ```bash
-sudo cat /etc/wireguard/peer_public.key # SAVE OUTPUT FOR LATER
-sudo cat /etc/wireguard/peer_private.key # SAVE OUTPUT FOR LATER
+sudo cat /etc/wireguard/client_public.key # SAVE OUTPUT FOR LATER
+sudo cat /etc/wireguard/client_private.key # SAVE OUTPUT FOR LATER
 ```
 
 Open config to add new peer
@@ -100,11 +99,11 @@ Add peer to the bottom
 # previous config above ...
 
 [Peer]
-PublicKey = <Peer_Public_Key>
+PublicKey = <Client_Public_Key>
 AllowedIPs = 10.0.0.2/32
 ```
-- Replace ```<Peer_Public_Key>``` with the new private key generated   
-- Each peer needs a unique VPN IP. (For example, for future peers replace AllowedIPs ```10.0.0.2/32``` -> ```10.0.0.3/32```)
+- Replace ```<Client_Public_Key>``` with the new private key generated   
+- Each peer needs a unique AllowedIPs. (For example, ```10.0.0.2/32```, ```10.0.0.3/32```...)
 - Save and exit
 
 ## Connecting to Wireguard
@@ -116,18 +115,19 @@ Download: https://www.wireguard.com/install/
 Create new tunnel
 ```ini
 [Interface]
-PrivateKey = <Peer_Private_Key>
-Address = 10.0.0.2/24
+PrivateKey = <Client_Private_Key>
+Address = 10.0.0.2/32
 DNS = 1.1.1.1
 
 [Peer]
 PublicKey = <Server_Public_Key>
 Endpoint = <Server_Public_IP>:51820
-AllowedIPs = 0.0.0.0/0, 192.168.1.0/24
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 25
 ```
-- Replace ```<Peer_Private_Key>``` to match peer config
+- Replace ```<Client_Private_Key>``` to match peer config
 - Replace ```10.0.0.2/32``` to match peer config
-- Replace ```<Server_Public_IP>``` with your IP or domain
+- Replace ```<Server_Public_IP>``` with your server IP or subdomain
 - Update AllowedIPs to match yours
 
 ## Extra Help

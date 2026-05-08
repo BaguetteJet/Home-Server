@@ -5,12 +5,12 @@ When the server IP address changes (due to dynamic home IP address), services de
 
 After this setup, the server address used by services to connect should be replaced by the chosen subdomain. All server ports remain unchanged and still require port forwarding.
 
-### Setup
+## Setup
 *COMPLETED 06/05/2026*
 
 Assuming you own a domain name
 
-#### PART 1 - Cloudflare Setup
+### PART 1 - Cloudflare Setup
 visit [cloudflare](https://www.cloudflare.com/) 
 - login or create account
 - add your domain, cloudflare will scan existing DNS records   
@@ -28,7 +28,7 @@ visit [cloudflare](https://www.cloudflare.com/)
 - copy/save API_TOKEN: profile > API Tokens > Create Token > Edit zone DNS > specific zone set to domain > create
 - copy/save ZONE_ID: domain > overview > API Zone ID (scroll down, on right)
 
-#### PART 2 - Auto Updater Setup
+### PART 2 - Auto Updater Setup
 Create new script
 ```bash
 sudo nano /usr/local/bin/cloudflare-ddns.sh
