@@ -1,0 +1,21 @@
+[Unit]
+Description=Hytale Server
+After=network-online.target
+
+[Container]
+ContainerName=hytale
+Image=ghcr.io/terkea/hytale-server:latest
+PublishPort=5520:5520/udp
+
+# Environment Variables
+Environment=SERVER_NAME="My Hytale Server"
+Environment=MAX_PLAYERS=10
+Environment=MEMORY=4G
+
+Volume=%h/hytale-servers/hytale:/data:Z
+
+[Service]
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

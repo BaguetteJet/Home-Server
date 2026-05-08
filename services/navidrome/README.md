@@ -13,7 +13,7 @@ Need to be on server network.
 
 ## Setup
 
-*COMPLETED 05/05/2026*
+*COMPLETED 04/05/2026*
 
 Assuming you have a Music folder somewhere with .mp3 files.
 
