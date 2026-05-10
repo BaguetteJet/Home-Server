@@ -1,6 +1,8 @@
 # Paper 1.21.11 Crossplay Server
 Minecraft 1.21.11 server that allows both JAVA and BEDROCK players.
 
+## Access
+
 JAVA -> server address: ```server_address```
 
 BEDROCK -> server address: ```server_address```, port: ```25565```
@@ -9,7 +11,7 @@ Players on the same network as the server use ```localhost``` instead of ```serv
 
 ## Setup
 
-Install Podman and Quadlet support.
+[Install Podman and Quadlet support](../../../system/podman/README.md)
 
 Allow ports in firewalll
 ```bash
@@ -25,29 +27,67 @@ Run `setup.sh` to install automatically
 
 Alternatively
 
-1. Create directory `mkdir ~/minecraft-servers/paper-mc-geyser/`
+Create directory for navidrome
+```bash
+mkdir ~/hytale-server/hytale
+```
 
-2. Copy `paper-mc-geyser.container` into `~/.config/containers/systemd/`
+Create quadlet
+```bash
+sudo nano ~/.config/containers/systemd/paper-mc-geyser.container
+```
+```ini
+[Unit]
+Description=Crossplay PaperMC 1.21.11 Server
+After=network-online.target
 
-3. Reload systemd `systemctl --user daemon-reload`
+[Container]
+ContainerName=paper-mc-geyser
+Image=docker.io/itzg/minecraft-server:java21
+PublishPort=25565:25565/tcp
+PublishPort=25565:25565/udp
+UserNS=keep-id
 
-4. Start the minecraft server `systemctl --user start paper-mc-geyser.service`
+Environment=EULA=TRUE
+Environment=TYPE=PAPER
+Environment=MEMORY=4G
+Environment=VERSION=1.21.11
+Environment=CREATE_CONSOLE_IN_PIPE=TRUE
 
-    This creates server files and folders automatically
+Volume=%h/minecraft-servers/paper-mc-geyser:/data:Z
 
-5. Download required [plugins](#required-plugins) and drop them into the ```/plugins``` folder
+# needed for typing commands into the Minecraft console
+PodmanArgs=--interactive --tty
 
-6. Restart the minecraft server `systemctl --user restart paper-mc-geyser.service`
+[Service]
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+```
+
+Reload daemons and start service
+```bash
+systemctl --user daemon-reload
+systemctl --user start hytale.service
+```
+
+Download required [plugins](#required-plugins) and drop them into the ```/plugins``` folder
+
+Restart the minecraft server 
+```bash
+systemctl --user restart paper-mc-geyser.service
+```
 
 ### Server Config
 
-#### Whitelist
 
-### Stop Server
 
-Stop server using `systemctl --user stop paper-mc-geyser.service`
+### Whitelist
 
-Mask service to disallow auto-start `systemctl --user mask paper-mc-geyser.service`
+Open container logs and console
+
+Cockpit > Podman Containers > paper-mc-geyser
 
 ### Required Plugins
 

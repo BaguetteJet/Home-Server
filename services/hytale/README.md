@@ -20,7 +20,7 @@ Players on the same network as the server use local server address instead of ``
 
 *COMPLETED 28/01/2026*
 
-Install Podman and Quadlet support.
+[Install Podman and Quadlet support](../../../system/podman/README.md)
 
 Allow port in firewalll
 ```bash
@@ -29,7 +29,7 @@ sudo ufw allow 5520/udp
 
 For players outside your local network, port forward 5520/udp 
 
-Create directory for navidrome
+Create directory
 ```bash
 mkdir ~/hytale-server/hytale
 ```
