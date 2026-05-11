@@ -15,8 +15,6 @@ I use ollama to run small models locally.
 
 [Install Podman and Quadlet support](../../../system/podman/README.md)
 
-
-
 Create directory
 ```bash
 mkdir ~/ollama

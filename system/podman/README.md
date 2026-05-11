@@ -36,7 +36,7 @@ sudo apt install cockpit-podman
 sudo systemctl restart cockpit
 ```
 
-## How to use Podman with Quadlets
+## Podman Quadlets
 
 Change working to the correct directory
 ```bash
@@ -79,7 +79,7 @@ systemctl --user mask <name>.service
 systemctl --user unmask <name>.service
 ```
 
-## Podman container networks
+## Podman Networks
 
 The default Podman network allows all containers to communicate with each other. For better container isolation, create dedicated networks. Using ```Network=host``` in a quadlet allows the container to share the host's network, which is easy to set up, but not good practice.
 
