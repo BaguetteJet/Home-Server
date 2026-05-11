@@ -5,18 +5,14 @@ After=network-online.target
 [Container]
 Image=docker.io/ollama/ollama:latest
 ContainerName=ollama
+Network=ai-net
 
 PublishPort=11434:11434
 
 Volume=%h/ollama:/root/.ollama
 
-Memory=14g
-
-# Allow Ollama to listen to external requests
-Environment=OLLAMA_HOST=0.0.0.0
-
 [Service]
-Restart=always
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target default.target

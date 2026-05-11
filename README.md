@@ -12,7 +12,7 @@ Ubuntu server setup for self hosting
 - 24/01/2026 [Syncthing](system/syncthing/README.md)
 - 25/01/2026 [Minecraft](services/minecraft/paper-1.21.11-geyser/README.md)
 - 28/01/2026 [Hytale](services/hytale/README.md)
-- 10/04/2026 [Ollama]()
+- 10/04/2026 [Ollama](services/ollama/README.md)
 - 17/04/2026 [Open WebGUI]()
 - 27/04/2026 [Chimera]()
 - 04/05/2026 [Navidrome](services/navidrome/README.md)

@@ -79,6 +79,59 @@ systemctl --user mask <name>.service
 systemctl --user unmask <name>.service
 ```
 
+## Podman container networks
+
+The default Podman network allows all containers to communicate with each other. For better container isolation, create dedicated networks. Using ```Network=host``` in a quadlet allows the container to share the host's network, which is easy to set up, but not good practice.
+
+Create a new network
+```bash
+sudo nano ~/.config/containers/systemd/<network-name>.network
+```
+- Replace ```<network-name>```
+
+.network file contents
+```bash
+[Unit]
+Description=Network Description
+
+[Network]
+NetworkName=<network-name>
+```
+If you do not set ```NetworkName=<network-name>```, you must use ```Network=systemd-<network-name>``` in quadlet
+
+Start network
+```bash
+systemctl --user start <network-name>-network.service
+```
+- Notice that there is a suffix ```-network``` appended before ```.service```
+
+Include in quadlet
+```bash
+Network=<network-name>
+```
+
+Show all exisitng networks
+```bash
+podman network ls
+```
+
+SAMPLE OUTPUT
+```bash
+NETWORK ID    NAME            DRIVER
+2f259bab93aa  podman          bridge # default
+4b44a1232ddd  <network-name>  bridge
+```
+
+Check if any containers are using a network
+```bash
+podman network inspect <network-name> | grep -i container
+```
+
+Remove network
+```bash
+podman network rm <network-name>
+```
+
 ## Useful Podman commands
 
 Show all exisitng contianers

@@ -1,0 +1,10 @@
+[Unit]
+# Description of network
+Description=Network Description
+
+[Network]
+# Podman will use this name (defaults to systemd-filename otherwise)
+NetworkName=<network-name>
+
+# If true, containers on this network cannot access the outside internet
+Internal=false

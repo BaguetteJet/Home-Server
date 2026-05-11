@@ -1,0 +1,5 @@
+[Unit]
+Description=Network for Ollama and WebUI
+
+[Network]
+NetworkName=ai-net
