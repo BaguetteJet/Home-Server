@@ -7,6 +7,7 @@ This repository documents the entire setup, including configuration and services
 
 | Docs | Contents |
 | --------- | -------|
+| [maintenance](maintenance/) | remote access, automatic updates, hardware installation |
 | [services](services/) | containerized services, game servers, multimedia |
 | [system](system/) | host machine setup, infrastructure, critical services |
 

@@ -1,5 +1,13 @@
 # Maintenance
 
+## Table of Contents
+
+- [Remote Server Access](#remote-server-access)
+- [Wake On LAN](#wake-on-lan)
+- [Automatic Updates](#automatic-updates)
+- [Mount Drives](#mount-drives)
+
+
 ## Remote Server Access
 
 Connect to server from network devices though SSH
@@ -24,6 +32,8 @@ Enable Wake on LAN/WLAN in server BIOS (under Power Management)
 Download and setup [WakeMeOnLan](https://www.nirsoft.net/utils/wake_on_lan.html) on another network device.
 
 ## Automatic Updates
+
+Automatic updates on Linux are crucial for maintaining security, stability, and performance by automatically patching vulnerabilities and fixing bugs without manual intervention. They ensure systems remain protected against emerging threats, which is especially vital for servers.
 
 *COMPLETED 31/12/2025*  
 
@@ -76,6 +86,8 @@ sudo systemctl status unattended-upgrades
 ```
 
 ## Mount Drives
+
+Following guide: [Step-by-Step Guide: Mounting a New Hard Drive in Linux](https://www.youtube.com/watch?v=I7JID97EMeA)
 
 ## Manage Services
 
