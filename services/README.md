@@ -1,6 +1,3 @@
-This directory contains all self-hosted services managed using [Podman and Quadlets](../../../system/podman/README.md)
+# Services
 
-Each folder contians:
-- Quadlet file (`.container`)
-- Documentation (`README.md`)
-- Optional setup script (`setup.sh`)
+This directory contains non-essential  services managed using [podman and quadlets](../../../system/podman/README.md), most of which run 24/7, while games servers only run as needed.

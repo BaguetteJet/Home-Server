@@ -1,6 +1,6 @@
 # Audio
 
-Optiplex 5080 has a built in speaker.
+Optiplex 5080 has a built in speaker. Why not use it lol?
 
 # Setup
 
