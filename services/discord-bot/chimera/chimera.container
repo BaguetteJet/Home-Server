@@ -4,12 +4,16 @@ After=network-online.target
 
 [Container]
 ContainerName=chimera
-Image=localhost/chimera-bot:latest
+Image=ghcr.io/baguettejet/chimera:latest
+AutoUpdate=registry
+
 WorkingDir=/app
 
 Volume=%h/discord-bots/chimera/repo:/app:Z
-
 EnvironmentFile=%h/discord-bots/chimera/repo/.env
+
+# fix terminal colour for Cockpit and run main script
+Exec=/usr/bin/script -q -c "python -u bot.py" /dev/null
 
 [Service]
 Restart=on-failure

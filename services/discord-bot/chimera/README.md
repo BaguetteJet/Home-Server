@@ -8,13 +8,14 @@ Discord APP ```Chimera V#0141```
 
 ## Setup
 
-*COMPLETED 17/04/2026*
+*COMPLETED 17/04/2026*   
+*UPDATED 13/05/2026*   
 
 [Install Podman and Quadlet support](../../../system/podman/README.md)
 
-[Setup GitHub connection]()
+[Setup GitHub connection and enable auto image build/update](../../../system/git/README.md)
 
-### Containerfile setup
+### Repository
 
 Include ```Containerfile``` file within project repository
 ```ini
@@ -26,7 +27,7 @@ COPY . .
 CMD ["python", "bot.py"]
 ```
 
-### Server side setup
+### Server
 
 Create directory
 ```bash
@@ -57,12 +58,16 @@ After=network-online.target
 
 [Container]
 ContainerName=chimera
-Image=localhost/chimera-bot:latest
+Image=ghcr.io/baguettejet/chimera:latest
+AutoUpdate=registry
+
 WorkingDir=/app
 
 Volume=%h/discord-bots/chimera/repo:/app:Z
-
 EnvironmentFile=%h/discord-bots/chimera/repo/.env
+
+# fix terminal colour and run main script
+Exec=/usr/bin/script -q -c "python -u bot.py" /dev/null
 
 [Service]
 Restart=on-failure
@@ -77,20 +82,6 @@ systemctl --user daemon-reload
 systemctl --user start chimera.service
 ```
 
-## How to update
+Container will be automatically updated when a new image is available
 
-Pull code from repo
-```bash
-cd ~/discord-bots/chimera/repo
-git pull
-```
-
-Build new image
-```bash
-podman build -t chimera-bot:latest .
-```
-
-Restart service
-```bash
-systemctl --user restart chimera.service
-```
+Ensure auto updates are enabled for [images built though Github](../../../system/git/README.md)

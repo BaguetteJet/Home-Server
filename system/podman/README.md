@@ -154,6 +154,22 @@ Clean up unused resources
 podman system prune
 ```
 
+## Auto image updates
+You can automatically build images from GitHub repository projects. You can also make Podman contaienrs automatically check and update to the latest image.
+
+See [GitHub connection and auto updates](../git/README.md)
+
+Enable podman auto updater
+```bash
+systemctl --user enable --now podman-auto-update.timer
+```
+Update quadlets to include
+```ini
+[Container]
+AutoUpdate=registry
+```
+Podman auto update will only update containers that include this this label. Other containers will be unaffected.
+
 ## Examples
 Commented example of a minecraft server quadlet ```paper-mc-geyser.container```
 ```ini
