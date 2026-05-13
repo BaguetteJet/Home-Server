@@ -13,7 +13,7 @@ This repository documents the entire setup, including configuration and services
 
 ## History
 
-Brief timeline of server setup progress – works as a table of contents.
+Brief timeline of server setup progress - works as a table of contents.
 
 2025
 - 2025-12-31 [Initial Setup]() - OS installation and configuration
@@ -29,6 +29,7 @@ Brief timeline of server setup progress – works as a table of contents.
 - 2026-01-28 [Hytale](services/hytale/README.md) - game server
 - 2026-04-10 [Ollama](services/ollama/README.md) - local LLMs
 - 2026-04-17 [Open WebUI](services/open-webui/README.md) - LLM interface
+- 2026-04-27 [Git](system/git/README.md) - GitHub connection
 - 2026-04-27 [Chimera](services/discord-bot/chimera/README.md) - discord bot
 - 2026-05-04 [Navidrome](services/navidrome/README.md) - music streaming
 - 2026-05-06 [Cloudflare DDNS](system/cloudflare-ddns/README.md) - dynamic dns
