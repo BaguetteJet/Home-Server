@@ -1,4 +1,8 @@
 # Home Server
+[![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04%20LTS-E95420?logo=ubuntu)](https://ubuntu.com/download/server)
+[![Podman](https://img.shields.io/badge/Podman-4.9.3-892CA0?logo=podman)](https://podman.io/)
+[![Zsh](https://img.shields.io/badge/Zsh-5.9-4C8DFF?logo=gnu-bash&logoColor=white)](https://www.zsh.org/)
+
 Ubuntu server setup using a Dell Optiplex 5080 for self-hosting. 
 
 I started this project to improve my understanding of Linux, system management, networking, security, and containerization.
