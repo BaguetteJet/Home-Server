@@ -12,7 +12,7 @@
 
 Connect to server from network devices though SSH
 ```bash
-ssh <user>@<server_ip>
+ssh <user>@<server-ip>
 ```
 
 Install [Wireguard](system/wireguard.md) to securely access the server network remotely without exposing server services directly to the internet.
@@ -20,7 +20,7 @@ Install [Wireguard](system/wireguard.md) to securely access the server network r
 Create .bat file for quick access on Windows
 ```bat
 @echo off
-ssh <user>@<server_ip>
+ssh <user>@<server-ip>
 pause
 ```
 
@@ -98,6 +98,7 @@ nano ~/.bashrc
 # scroll to bottom, add alias, save file
 source ~/.bashrc
 ```
+As of 16/05/2026 I have switched to Z shell but still import alias from .bashrc
 
 #### List of Alias
 ```bash

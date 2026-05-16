@@ -16,7 +16,7 @@ This repository documents the entire setup, including configuration and services
 Brief timeline of server setup progress - works as a table of contents.
 
 2025
-- 2025-12-31 [Initial Setup]() - OS installation and configuration
+- 2025-12-31 [Initial Setup](system/initial-setup/README.md) - OS installation and configuration
 - 2025-12-31 [Firewall](system/firewall/README.md) - UFW configuration
 
 2026
