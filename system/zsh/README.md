@@ -18,9 +18,9 @@ sudo nano ~/.zshrc
 ```bash
 # Use bash command history
 HISTFILE=~/.bash_history
-HISTSIZE=1000
-SAVEHIST=1000
-setopt appendhistory
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory histignoredups
 # Set prompt colours to Ubuntu default
 PROMPT=$'%F{green}%B%n@%m%b%f:%F{blue}%B%~%b%f$ '
 

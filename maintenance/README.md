@@ -103,8 +103,7 @@ As of 16/05/2026 I have switched to Z shell but still import alias from .bashrc
 #### List of Alias
 ```bash
 # Basic computer temps
-alias cputemp='paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\''\t'\'>a
-
+alias temps='s=$(sensors); echo "CPU:  $(echo "$s" | grep Package | awk "{print \$4}")"; echo "NVMe: $(echo "$s" | grep Composite | awk "{print \$2}")"; echo "Fan:  $(echo "$s" | grep fan1 | awk "{print \$2, \$3}")"'
 # Ollama prefix for commands into container
 alias ollama='podman exec -it ollama ollama'
 ```
