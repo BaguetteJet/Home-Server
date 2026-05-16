@@ -34,3 +34,4 @@ Brief timeline of server setup progress - works as a table of contents.
 - 2026-05-04 [Navidrome](services/navidrome/README.md) - music streaming
 - 2026-05-06 [Cloudflare DDNS](system/cloudflare-ddns/README.md) - dynamic dns
 - 2026-05-11 [Audio](system/audio/README.md) - system speakers
+- 2026-05-16 [Z shell](system/zsh/README.md) - custom terminal
