@@ -31,6 +31,12 @@ sudo rm /run/motd.d/85-fwupd
 ```
 To undo, ```sudo rm /etc/motd.d/85-fwupd```
 
+Mask update service for ```50-motd-news```
+```bash
+sudo systemctl mask motd-news.service
+```
+To undo, ```sudo systemctl unmask motd-news.service```
+
 ## BEFORE
 ```
 Welcome to Ubuntu 24.04 LTS (GNU/Linux generic x86_64)
