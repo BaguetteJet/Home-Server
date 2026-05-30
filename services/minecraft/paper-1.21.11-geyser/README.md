@@ -29,7 +29,7 @@ Alternatively
 
 Create directory for navidrome
 ```bash
-mkdir ~/hytale-server/hytale
+mkdir ~/minecraft-servers/paper-mc-geyser
 ```
 
 Create quadlet
